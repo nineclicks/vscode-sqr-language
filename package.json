@@ -2,11 +2,13 @@
   "name": "sqr-language",
   "displayName": "sqr-language",
   "description": "Code highlighting and symbols for SQR language.",
+  "publisher": "NickGardner",
+  "icon": "herman.png",
   "repository": {
       "type": "git",
       "url": "https://github.com/nineclicks/vscode-sqr-language"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.85.0"
   },
