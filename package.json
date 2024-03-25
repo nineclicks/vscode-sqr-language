@@ -1,0 +1,34 @@
+{
+  "name": "sqr-language",
+  "displayName": "sqr-language",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "documentSymbolProvider": true,
+    "languages": [{
+      "id": "sqr",
+      "aliases": ["sqr", "sqr"],
+      "extensions": [".sqr"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "sqr",
+      "scopeName": "source.sqr",
+      "path": "./syntaxes/sqr.tmLanguage.json"
+    }],
+    "semanticTokenTypes": [
+        {
+            "id": "function",
+            "superType": "function",
+            "description": "Function declarations"
+        }
+    ]
+  }
+}

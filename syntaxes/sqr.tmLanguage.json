@@ -1,0 +1,95 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "sqr",
+  "patterns": [
+    {
+      "comment": "directives",
+      "name": "entity.name.function.macro.sqr",
+      "match": "(?i)(?<![\\w-])(\\#debug|\\#define|\\#else|\\#end\\-if|\\#endif|\\#if|\\#ifdef|\\#ifndef|\\#include)(?![\\w-])"
+    },
+    {
+      "comment": "comments",
+      "name": "comment.block.sqr",
+      "match": "!.*$"
+    },
+    {
+      "comment": "variables",
+      "name": "variable.name.sqr",
+      "match": "([$#&][\\w-]+)"
+    },
+    {
+      "name": "string.single.source.sqr",
+      "match": "'(?:\\\\.|[^'\\\\])*'",
+      "comment": "String single quote"
+    },
+    {
+      "name": "string.double.source.sqr",
+      "match": "\"(?:\\\\.|[^\"\\\\])*\"",
+      "comment": "String double quote"
+    },
+    {
+      "comment": "procedure call",
+      "match": "(?i)\\b(do)\\b[\\t ]+([\\w-]+)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.sqr"
+        },
+        "2": {
+          "name": "entity.name.function.SQR"
+        }
+      }
+    },
+    {
+      "name": "meta.function.procedure.SQR",
+      "begin": "(?i)^[ \\t]*(begin-procedure)[ \\t]+([\\w-]+)(?:[ \\t]+(local))?",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.SQR"
+        },
+        "2": {
+          "name": "entity.name.function.SQR"
+        },
+        "3": {
+          "name": "entity.name.type.SQR"
+        }
+      },
+      "end": "(?i)^[ \\t]*(end-procedure)",
+      "endCaptures": {
+        "0": {
+          "name": "keyword.control.sqr"
+        }
+      },
+      "patterns": [
+        {
+          "include": "$self"
+        }
+      ]
+    },
+    {
+      "comment": "controls",
+      "name": "keyword.control.sqr",
+      "match": "(?i)(?<![\\w-])(if|else|end\\-if|while|end\\-while|evaluate|when\\-other)(?![\\w-])"
+    },
+    {
+      "comment": "sections",
+      "name": "entity.name.function.sqr",
+      "match": "(?i)(?<![\\w-])(begin\\-program|end\\-program|begin\\-setup|end\\-setup|begin\\-heading|end\\-heading|begin\\-footing|end\\-footing)(?![\\w-])"
+    },
+    {
+      "comment": "functions",
+      "name": "entity.name.function.sqr",
+      "match": "(?i)(?<![\\w-])(abs|acos|asin|atan|ceil|cos|cosh|deg|e10|exp|floor|log|log10|mod|power|rad|round|sign|sin|sinh|sqrt|tan|tanh|trunc|delete|exists|rename|array|ascii|asciic|chr|cond|dateadd|datediff|datenow|datetostr|edit|getenv|instr|instrb|isblank|isnull|length|lengthb|lengthp|lengtht|lower|lpad|ltrim|nvl|range|replace|roman|rpad|rtrim|strtodate|substr|substrb|substrp|substrt|to_char|to_multi_byte|to_number|to_single_byte|translate|transform|unicode|upper|wrapdepth)(?![\\w-])"
+    },
+    {
+      "comment": "operators",
+      "name": "keyword.operator.sqr",
+      "match": "(?i)(?<![\\w-])(\\|\\||\\+|\\-|\\^|\\*|/|%|\\+|\\-|>|<|>=|<=|<>|!=|=|not|and|or|xor)(?![\\w-])"
+    },
+    {
+      "comment": "keywords",
+      "name": "keyword.other.sqr",
+      "match": "(?i)(?<![\\w-])(add|alter\\-color\\-map|alter\\-locale|alter\\-printer|alter\\-report|array\\-add|array\\-divide|array\\-multiply|array\\-subtract|ask|begin\\-document|begin\\-execute|begin\\-select|begin\\-sql|break|call|call|clear\\-array|close|columns|commit|concat|connect|create\\-array|create\\-color\\-palette|declare\\-chart|declare\\-color\\-map|declare\\-connection|declare\\-image|declare\\-layout|declare\\-printer|declare\\-procedure|declare\\-report|declare\\-toc|declare\\-variable|display|divide|encode|end\\-declare|end\\-document|end\\-evaluate|end\\-select|end\\-sql|execute|exit\\-select|extract|find|get|get\\-color|goto|graphic|graphic|graphic\\ vert\\-line|input|last\\-page|let|load\\-lookup|lookup|lowercase|mbtosbs|move|multiply|new\\-page|new\\-report|next\\-column|next\\-listing|open|page\\-number|position|print|print\\-bar\\-code|print\\-chart|print\\-direct|print\\-image|put|read|rollback|sbtombs|security|set\\-color|set\\-generations|set\\-levels|set\\-members|show|stop|string|subtract|toc\\-entry|unstring|uppercase|use|use\\-column|use\\-printer\\-type|use\\-procedure|use\\-report|write)(?![\\w-])"
+    }
+  ],
+  "scopeName": "source.sqr"
+}
