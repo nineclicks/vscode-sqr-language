@@ -8,7 +8,7 @@
       "type": "git",
       "url": "https://github.com/nineclicks/vscode-sqr-language"
   },
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -28,13 +28,6 @@
       "language": "sqr",
       "scopeName": "source.sqr",
       "path": "./syntaxes/sqr.tmLanguage.json"
-    }],
-    "semanticTokenTypes": [
-        {
-            "id": "function",
-            "superType": "function",
-            "description": "Function declarations"
-        }
-    ]
+    }]
   }
 }
